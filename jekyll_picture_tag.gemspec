@@ -40,6 +40,9 @@ Gem::Specification.new do |spec|
   # ruby-vips interfaces with libvips.
   spec.add_runtime_dependency 'ruby-vips', '~> 2.0.17'
 
+  spec.add_runtime_dependency 'mini_magick', '~> 4.12.0'
+
+
   # libvips handles all image processing operations.
   spec.requirements << 'libvips'
 

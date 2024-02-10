@@ -1,4 +1,14 @@
-require 'ruby-vips'
+begin
+  require 'ruby-vips'
+rescue LoadError
+  # ignore
+end
+
+begin
+  require "mini_magick"
+rescue LoadError
+  # ignore
+end
 
 module PictureTag
   # Represents a generated image, but not the file itself. Its purpose is to

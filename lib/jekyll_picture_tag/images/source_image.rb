@@ -116,7 +116,11 @@ module PictureTag
     end
 
     def image
-      @image ||= Vips::Image.new_from_file(name)
+      begin
+        @image ||= Vips::Image.new_from_file(name)
+      rescue
+        @image ||= MiniMagick::Image.new(name)
+      end
     end
 
     def source_digest
